@@ -72,7 +72,6 @@ export default {
     margin-right: 8px;
     font-size: 14px;
     background: linear-gradient(to bottom, rgba(30,136,229 ,1), rgba(25,118,210 ,1));
-    box-shadow: 2px 2px 8px 0 rgba(13,71,161 ,.75);
 
     &:hover,
     &:focus {
@@ -86,7 +85,6 @@ export default {
 
     &--red {
       background: linear-gradient(to bottom, rgba(244,81,30 ,1), rgba(230,74,25 ,1));
-      box-shadow: 2px 2px 8px 0 rgba(191,54,12 ,1);
 
       &:hover,
       &:focus {
@@ -96,7 +94,6 @@ export default {
 
     &--green {
       background: linear-gradient(to bottom, rgba(76,175,80 ,1), rgba(67,160,71 ,1));
-      box-shadow: 2px 2px 8px 0 rgba(27,94,32 ,1);
 
       &:hover,
       &:focus {
@@ -106,7 +103,6 @@ export default {
 
     &--blue {
       background: linear-gradient(to bottom, rgba(79,195,247 ,1), rgba(41,182,246 ,1));
-      box-shadow: 2px 2px 8px 0 rgba(2,136,209 ,1);
 
       &:hover,
       &:focus {
@@ -116,7 +112,6 @@ export default {
 
     &--white {
       background: #fff;
-      box-shadow: 2px 2px 8px 0 rgba(100,100,100 ,.8);
       color: rgba(84,110,122 ,1);
 
       &:hover,
@@ -127,7 +122,6 @@ export default {
 
     &--transparent {
       background: transparent;
-      box-shadow: none;
       color: #fff;
 
       &:hover,
