@@ -106,6 +106,11 @@ export default {
           name: gitLab.projects.mobile.key,
           selected: false,
         },
+        {
+          text: gitLab.projects.mvp.name,
+          name: gitLab.projects.mvp.key,
+          selected: false,
+        },
       ],
       initialBranchLabel: '',
       selectedBranchKey: '',
@@ -559,7 +564,7 @@ export default {
     right: 190px;
     padding: 10px;
     height: 130px;
-    width: 650px;
+    width: 700px;
     border-radius: 4px;
     background: rgba(84,110,122 ,1);
     display: flex;
