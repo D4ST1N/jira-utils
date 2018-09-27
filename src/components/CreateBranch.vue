@@ -341,7 +341,7 @@ export default {
         this.selectedBranchKey = selectedBranch.key;
       }
 
-      if (type === this.desktop && search !== gitLab.hotfixBranchesFilter) {
+      if (type === gitLab.projects.desktop.key && search !== gitLab.hotfixBranchesFilter) {
         this.branches = [
           {
             text: gitLab.projects.desktop.mainBrand,
@@ -352,7 +352,7 @@ export default {
               || false,
           },
         ];
-      } else if (type === this.mobile && search !== gitLab.hotfixBranchesFilter) {
+      } else if (type === gitLab.projects.mobile.key && search !== gitLab.hotfixBranchesFilter) {
         this.branches = [
           {
             text: gitLab.projects.mobile.mainBrand,
@@ -396,7 +396,7 @@ export default {
             const branchIndex = this.getBranchIndexByBrand(branchBrand);
             const branchObject = {
               name: branchNameParts[1],
-              label: branchBrand,
+              text: branchBrand,
               value: branchNameParts[1],
               selected: this.initialBranchLabel === branchBrand
                 || this.selectedBranchKey === branch.name || false,
@@ -416,8 +416,30 @@ export default {
         }
       });
 
-      this.branches = this.removeDuplicates(x => x.name, this.branches);
+      if (search === gitLab.hotfixBranchesFilter) {
+        this.branches.sort((branch1, branch2) => new Date(branch2.value) - new Date(branch1.value));
+      }
+
+      this.branches = this.removeDuplicates(x => x.text, this.branches);
+      const selected = this.branches.find(branch => branch.selected);
+      this.selected.branch = selected ? selected.name : this.branches[0].name;
       this.initialBranchLabel = undefined;
+    },
+
+    getBranchBrand(branch) {
+      const branchParts = branch.split('-');
+      return branchParts[branchParts.length - 1];
+    },
+
+    getBranchIndexByBrand(brand) {
+      let branchIndex;
+      this.branches.forEach((branch, index) => {
+        if (branch.text === brand) {
+          branchIndex = index;
+        }
+      });
+
+      return branchIndex;
     },
 
     selectType(types, selectedType, getBranches = true) {
@@ -537,7 +559,7 @@ export default {
     right: 190px;
     padding: 10px;
     height: 130px;
-    width: 580px;
+    width: 650px;
     border-radius: 4px;
     background: rgba(84,110,122 ,1);
     display: flex;
