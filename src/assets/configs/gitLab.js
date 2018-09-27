@@ -29,7 +29,7 @@ export default {
     },
     mvp: {
       key: 'air/air-pm',
-      name: 'air-pm',
+      name: 'air-mvp',
       type: 'desktop',
       mainBranch: 'mvp-skeleton-kube',
       mainBrand: 'mvp',
