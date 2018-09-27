@@ -27,6 +27,13 @@ export default {
       mainBranch: 'develop',
       mainBrand: 'com',
     },
+    mvp: {
+      key: 'air/air-pm',
+      name: 'air-pm',
+      type: 'desktop',
+      mainBranch: 'mvp-skeleton-kube',
+      mainBrand: 'mvp',
+    },
   },
   url: 'https://git.betlab.com/api/v4/projects/{project}/repository/branches?{params}',
   branchUrl: 'https://git.betlab.com/{project}/tree/{branch}',
