@@ -106,11 +106,6 @@ export default {
           name: gitLab.projects.mobile.key,
           selected: false,
         },
-        {
-          text: gitLab.projects.mvp.name,
-          name: gitLab.projects.mvp.key,
-          selected: false,
-        },
       ],
       initialBranchLabel: '',
       selectedBranchKey: '',
